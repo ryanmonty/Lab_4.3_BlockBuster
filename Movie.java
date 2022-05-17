@@ -8,7 +8,7 @@ public abstract class Movie {
 
 
 	public ArrayList<String> getScenes() {
-		return scenes;
+		return (ArrayList<String>) scenes;
 	}
 	
 	public void setScenes(ArrayList<String> scenes) {

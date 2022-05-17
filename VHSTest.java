@@ -1,7 +1,5 @@
 import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import org.junit.jupiter.api.Test;
 
@@ -28,8 +26,8 @@ class VHSTest {
 		scenes.add("Scene1");
 		scenes.add("Scene2");
 		scenes.add("Scene3");
-		
-		v.play();
+		v.setScenes(scenes);
+		v.play1();
 		assertEquals(1, v.getCurrentTime());
 		
 	}
