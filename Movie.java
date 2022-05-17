@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public abstract class Movie {
 	private String title;
 	private int runTime;
-	protected ArrayList<String> scenes = new ArrayList<>();
+	protected static ArrayList<String> scenes = new ArrayList<>();
 	
 
 
@@ -31,8 +31,10 @@ public abstract class Movie {
 		this.runTime = runTime;
 	}
 	
-	public String printInfo(String title, int runTime) {
-		String info = "Title: " + title + ", " + "Run Time: " + runTime;
+	public String printInfo() {
+		String info = getTitle() +  getRunTime();
+		System.out.println("Title: " + getTitle());
+		System.out.println("Run Time: " + getRunTime());
 		return info;
 	}
 	
