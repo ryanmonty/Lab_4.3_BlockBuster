@@ -7,7 +7,7 @@ class DVDTest {
 	@Test
 	void test() {
 		Movie testDVD = new DVD();
-		DVD d = (DVD) testDVD;
+		DVD d = (DVD)testDVD;
 		d.setTitle("testTitle");
 		d.setRunTime(123);
 		assertEquals("testTitle", testDVD.getTitle());

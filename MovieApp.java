@@ -63,7 +63,7 @@ public class MovieApp {
 		up.setTitle("Up");
 		up.setRunTime(96);
 		ArrayList<String> upScenes = new ArrayList<>();
-		upScenes.add("Grumpy Old Man Meets Chipper Boy");
+		upScenes.add("Grumpy Old Man Meets Enthusiastic Boy");
 		upScenes.add("Adventure Awaits");
 		upScenes.add("Bringing Down the Blimp");
 		up.setScenes(upScenes);

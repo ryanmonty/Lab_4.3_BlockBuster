@@ -21,24 +21,26 @@ class VHSTest {
 	
 	@Test
 	void testPlay() {
-		VHS testVHS = new VHS();
+		Movie testVHS = new VHS();
 		VHS v = (VHS) testVHS;
 		v.setCurrentTime(0);
 		ArrayList<String> scenes = new ArrayList<>();
 		scenes.add("Scene1");
+		scenes.add("Scene2");
+		scenes.add("Scene3");
+		
 		v.play();
-		assertEquals(1, testVHS.getCurrentTime());
+		assertEquals(1, v.getCurrentTime());
 		
 	}
 	
 	@Test
 	void testRewind() {
-		VHS testVHS = new VHS();
+		Movie testVHS = new VHS();
 		VHS v = (VHS) testVHS;
 		v.setCurrentTime(5);
-		ArrayList<String> scenes = new ArrayList<String>(Arrays.asList("Scene1", "Scene2", "Scene3"));
 		v.rewind();
-		assertEquals(0, testVHS.getCurrentTime());
+		assertEquals(0, v.getCurrentTime());
 		
 	}
 
