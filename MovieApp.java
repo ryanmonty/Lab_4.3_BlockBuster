@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class MovieApp {
@@ -7,74 +8,72 @@ public class MovieApp {
 	static String movieSelection = "";
 
 	public static void main(String[] args) {
-
-		Movie movie1 = new VHS();
-		VHS speed = (VHS) movie1;
-		speed.setTitle("Speed");
-		speed.setRunTime(116);
+		
+		ArrayList<Movie> movies = new ArrayList<>();
+	
+		Play speed = new VHS("Speed", 116);
+		movies.add(new Movie(speed));
+		Play breakfastClub = new VHS("The Breakfast Club", 116);
+		movies.add(new Movie(breakfastClub));
+		Play goonies = new VHS("The Goonies", 114);
+		movies.add(new Movie(goonies));
+		Play matrix = new DVD("The Matrix", 136);
+		movies.add(new Movie(matrix));
+		Play lotr = new DVD("The Lord of the Rings: The Fellowship of the Ring", 178);
+		movies.add(new Movie(lotr));
+		Play up = new DVD("Up", 96);
+		movies.add(new Movie(up));
+		
+		
 		ArrayList<String> speedScenes = new ArrayList<>();
 		speedScenes.add("Pop Quiz");
 		speedScenes.add("Beep Beep");
 		speedScenes.add("The Day is Saved!");
-		speed.setScenes(speedScenes);
+		movies.get(0).setTitle("Speed");
+		movies.get(0).setRunTime(116);
+		movies.get(0).setScenes(speedScenes);
 
-		Movie movie2 = new VHS();
-		VHS breakfastClub = (VHS) movie2;
-		breakfastClub.setTitle("The Breakfast Club");
-		breakfastClub.setRunTime(116);
+		
 		ArrayList<String> breakfastClubScenes = new ArrayList<>();
 		breakfastClubScenes.add("Detention");
 		breakfastClubScenes.add("Running Around the Halls");
 		breakfastClubScenes.add("Getting to Know Each Other");
-		breakfastClub.setScenes(breakfastClubScenes);
-
-		Movie movie3 = new VHS();
-		VHS goonies = (VHS) movie3;
-		goonies.setTitle("The Goonies");
-		goonies.setRunTime(114);
+		movies.get(1).setTitle("The Breakfast Club");
+		movies.get(1).setRunTime(116);
+		movies.get(1).setScenes(breakfastClubScenes);
+		
 		ArrayList<String> goonieScenes = new ArrayList<>();
 		goonieScenes.add("Treasure Map");
 		goonieScenes.add("Walk the Plank");
 		goonieScenes.add("Home");
-		goonies.setScenes(goonieScenes);
+		movies.get(2).setTitle("The Goonies");
+		movies.get(2).setRunTime(114);
+		movies.get(2).setScenes(goonieScenes);
 		
-		Movie movie4 = new DVD();
-		DVD matrix = (DVD) movie4;
-		matrix.setTitle("The Matrix");
-		matrix.setRunTime(136);
 		ArrayList<String> matrixScenes = new ArrayList<>();
 		matrixScenes.add("Wake Up, Neo");
 		matrixScenes.add("I Know Kung Fu");
 		matrixScenes.add("Rescue Morpheus");
-		matrix.setScenes(matrixScenes);
-		
-		Movie movie5 = new DVD();
-		DVD lotr = (DVD) movie5;
-		lotr.setTitle("The Lord of the Rings: The Fellowship of the Ring");
-		lotr.setRunTime(178);
+		movies.get(3).setTitle("The Matrix");
+		movies.get(3).setRunTime(136);
+		movies.get(3).setScenes(matrixScenes);
+	
 		ArrayList<String> lotrScenes = new ArrayList<>();
 		lotrScenes.add("The Dark Lord Has Returned");
 		lotrScenes.add("Forming the Fellowship");
 		lotrScenes.add("Defending Frodo");
-		lotr.setScenes(lotrScenes);
+		movies.get(4).setTitle("The Lord of the Rings: The Fellowship of the Ring");
+		movies.get(4).setRunTime(178);
+		movies.get(4).setScenes(lotrScenes);
 		
-		Movie movie6 = new DVD();
-		DVD up = (DVD) movie6;
-		up.setTitle("Up");
-		up.setRunTime(96);
 		ArrayList<String> upScenes = new ArrayList<>();
 		upScenes.add("Grumpy Old Man Meets Enthusiastic Boy");
 		upScenes.add("Adventure Awaits");
 		upScenes.add("Bringing Down the Blimp");
-		up.setScenes(upScenes);
+		movies.get(5).setTitle("Up");
+		movies.get(5).setRunTime(96);
+		movies.get(5).setScenes(upScenes);
 
-		ArrayList<Movie> movies = new ArrayList<>();
-		movies.add(speed);
-		movies.add(breakfastClub);
-		movies.add(goonies);
-		movies.add(matrix);
-		movies.add(lotr);
-		movies.add(up);
 
 		System.out.println("Welcome to the GC Blockbuster!");
 		System.out.println();
@@ -89,35 +88,29 @@ public class MovieApp {
 
 		
 		if (input1 == 1) {
-			Movie selection = speed;
-			selection.printInfo();
-			selection.play();
+			movies.get(0).printInfo();
+			movies.get(0).play();
 		}else if(input1 == 2) {
-			Movie selection = breakfastClub;
-			selection.printInfo();
-			selection.play();
+			movies.get(1).printInfo();
+			movies.get(2).play();
 		}else if(input1 == 3) {
-			Movie selection = goonies;
-			selection.printInfo();
-			selection.play();
+			movies.get(2).printInfo();
+			movies.get(2).play();
 		}else if(input1 == 4) {
-			Movie selection = matrix;
-			selection.printInfo();
+			movies.get(3).printInfo();
 			System.out.println("\nScenes:");
-			selection.printScenes();
-			selection.play();
+			movies.get(3).printScenes();
+			movies.get(3).play();
 		}else if(input1 == 5) {
-			Movie selection = lotr;
-			selection.printInfo();
+			movies.get(4).printInfo();
 			System.out.println("\nScenes:");
-			selection.printScenes();
-			selection.play();
+			movies.get(4).printScenes();
+			movies.get(4).play();
 		}else if(input1 == 6) {
-			Movie selection = up;
-			selection.printInfo();
+			movies.get(5).printInfo();
 			System.out.println("\nScenes:");
-			selection.printScenes();
-			selection.play();
+			movies.get(5).printScenes();
+			movies.get(5).play();
 		}
 		
 			

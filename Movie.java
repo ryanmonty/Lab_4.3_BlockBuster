@@ -1,11 +1,19 @@
 import java.util.ArrayList;
 
-public abstract class Movie {
+public class Movie {
+	private Play IPlay;
 	private String title;
 	private int runTime;
-	protected ArrayList<String> scenes = new ArrayList<>();
+	protected ArrayList<String> scenes;
 	
 
+	public Movie(Play IPlay) {
+		this.IPlay = IPlay;
+	}
+	
+	public Play getPlay() {
+		return IPlay;
+	}
 
 	public ArrayList<String> getScenes() {
 		return (ArrayList<String>) scenes;
@@ -31,11 +39,9 @@ public abstract class Movie {
 		this.runTime = runTime;
 	}
 	
-	public String printInfo() {
-		String info = getTitle() + getRunTime();
+	public void printInfo() {
 		System.out.println("Title: " + getTitle());
 		System.out.println("Run Time: " + getRunTime() + " minutes");
-		return info;
 	}
 	
 	public void printScenes() {
@@ -45,7 +51,9 @@ public abstract class Movie {
 		}
 	}
 	
-	public abstract void play();
+	public void play() {
+		IPlay.play(scenes);
+	}
 	
 	@Override
 	public String toString() {
